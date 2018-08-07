@@ -147,11 +147,13 @@ public class BluetoothLeService extends Service {
             final byte[] data = characteristic.getValue();
             if (data != null && data.length > 0) {
                 final StringBuilder stringBuilder = new StringBuilder(data.length);
+                Log.e(TAG, "data in " );
                 for(byte byteChar : data){
                     Log.e(TAG, "broadcastUpdate: --> " + byteChar );
                     stringBuilder.append(String.format("%02X ", byteChar));
                 }
-                   
+                Log.e(TAG, "data out " );
+
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
         }
