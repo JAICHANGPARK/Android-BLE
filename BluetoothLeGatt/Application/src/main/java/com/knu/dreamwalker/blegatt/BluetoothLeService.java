@@ -154,6 +154,7 @@ public class BluetoothLeService extends Service {
                 }
                 Log.e(TAG, "data out " );
 
+
                 intent.putExtra(EXTRA_DATA, new String(data) + "\n" + stringBuilder.toString());
             }
         }
